@@ -1,8 +1,8 @@
 import React from "react";
-import logoSvg from "./assets/img/pizza-logo.svg"
-import {Button} from "./Button";
+import logoSvg from "../assets/img/pizza-logo.svg"
+import {Button} from "./index";
 
-export const Header = props => {
+const Header = props => {
     return (<div className="header">
     <div className="container">
         <div className="header__logo">
@@ -18,3 +18,4 @@ export const Header = props => {
     </div>
 </div>
 )}
+export  default Header

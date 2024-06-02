@@ -1,6 +1,7 @@
 import React from 'react';
 
-export const Button = () => {
+
+const Button = () => {
     return (
         <a href="/cart.html" className="button button--cart">
             <span>520 ₽</span>
@@ -38,3 +39,5 @@ export const Button = () => {
         </a>
     )
 }
+
+export default Button;
