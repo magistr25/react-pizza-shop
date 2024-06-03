@@ -21,6 +21,7 @@ const Home = ({items}) => {
                         key={obj.id}
                         name={obj.name}
                         imageUrl={obj.imageUrl}
+                        types={obj.types}
                         sizes={obj.sizes}
                         price={obj.price}
                         category={obj.category}

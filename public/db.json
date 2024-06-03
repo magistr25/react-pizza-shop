@@ -5,7 +5,7 @@
       "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
       "name": "Пепперони фреш с перцем" ,
       "types": [0, 1],
-      "sizes": [26, 30, 40],
+      "sizes": [26, 40],
       "price": 803,
       "category": 0,
       "rating": 4
@@ -14,8 +14,8 @@
       "id": 2,
       "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D610D2925109AB2E1C92CC5383C.avif",
       "name": "Сырная" ,
-      "types": [0, 1],
-      "sizes": [26, 30, 40],
+      "types": [0],
+      "sizes": [26, 30],
       "price": 803,
       "category": 0,
       "rating": 4
@@ -24,8 +24,8 @@
       "id": 3,
       "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D60FDA22358AC33C6A44EB093A2.avif",
       "name": "Ветчина и сыр" ,
-      "types": [0, 1],
-      "sizes": [26, 30, 40],
+      "types": [1],
+      "sizes": [30, 40],
       "price": 803,
       "category": 0,
       "rating": 4
