@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const PizzaBlock = ({imageUrl, name, types, sizes, price, category, rating}) => {
@@ -76,5 +77,19 @@ const PizzaBlock = ({imageUrl, name, types, sizes, price, category, rating}) => 
             </div>
         </div>
     )
+}
+
+PizzaBlock.propTypes = {
+    name: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    types: PropTypes.arrayOf(PropTypes.number).isRequired,
+    sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
+    price: PropTypes.number.isRequired,
+    }
+PizzaBlock.defaultProps = {
+    name: '---',
+    price: 0,
+    types: [],
+    sizes: []
 }
 export default PizzaBlock
