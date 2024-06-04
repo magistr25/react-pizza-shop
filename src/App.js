@@ -1,38 +1,77 @@
 import React, {useEffect, useState} from 'react';
+import axios from "axios";
+import {connect} from 'react-redux';
 import {Header} from "./components";
 import {Home, Cart} from "./pages";
 import {Route, Routes} from "react-router";
-import axios from "axios";
+import {setPizzas} from './redux/reducers/pizzas';
 
 
 
-function App() {
-    const [pizzas, setPizzas] = useState([]);
+// function App() {
+//     const [pizzas, setPizzas] = useState([]);
+//
+//     useEffect(() => {
+//         axios.get('http://localhost:3000/db.json')
+//             .then(({data}) => {
+//                 setPizzas(data.pizzas);
+//             })
+//
+//     }, []);
+//
+//   return (
+//       <div className="wrapper">
+//         <Header />
+//         <div className="content">
+//           <Routes>
+//             <Route path="/" element={<Home items={pizzas} />} />
+//             <Route path="/cart" element={<Cart />} />
+//           </Routes>
+//
+//         </div>
+//       </div>
+//
+//
+//   );
+// }
 
-    useEffect(() => {
+class App extends React.Component {
+    componentDidMount() {
         axios.get('http://localhost:3000/db.json')
             .then(({data}) => {
-                setPizzas(data.pizzas);
+                this.props.setPizzas(data.pizzas);
             })
+    }
 
-    }, []);
+    render() {
 
-  return (
-      <div className="wrapper">
-        <Header />
-        <div className="content">
-          <Routes>
-            <Route path="/" element={<Home items={pizzas} />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
+        return (
+            <div className="wrapper">
+                <Header/>
+                <div className="content">
+                    <Routes>
+                        <Route path="/" element={<Home items={this.props.items}/>}/>
+                        <Route path="/cart" element={<Cart/>}/>
+                    </Routes>
 
-
-
-        </div>
-      </div>
+                </div>
+            </div>
 
 
-  );
+        );
+    }
+}
+const mapStateToProps = (state) => {
+    return {
+        items: state.pizzas.items
+    }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setPizzas: (items) => dispatch(setPizzas(items)) // связываем действие с props
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
