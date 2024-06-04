@@ -21,7 +21,7 @@ const pizzas = (state=initialState, action) =>{
 
 
 //action-creators
-export const setPizzas = (items) => ({
+export const setPizzasAC = (items) => ({
     type: SET_PIZZAS,
     payload: items
 });

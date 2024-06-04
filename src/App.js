@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {Header} from "./components";
 import {Home, Cart} from "./pages";
 import {Route, Routes} from "react-router";
-import {setPizzas} from './redux/reducers/pizzas';
+import {setPizzasAC} from './redux/reducers/pizzas';
 
 
 
@@ -57,7 +57,6 @@ class App extends React.Component {
                 </div>
             </div>
 
-
         );
     }
 }
@@ -69,7 +68,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setPizzas: (items) => dispatch(setPizzas(items)) // связываем действие с props
+        setPizzas: (items) => dispatch(setPizzasAC(items)) // связываем действие с props
     }
 }
 
