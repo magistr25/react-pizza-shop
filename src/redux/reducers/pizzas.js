@@ -1,11 +1,8 @@
-let SET_PIZZAS='SET_PIZZAS'
-
 
 const initialState = {
     items: [],
     isLoaded: false,
 }
-
 
 //reducer
 const pizzas = (state=initialState, action) =>{
@@ -17,13 +14,5 @@ const pizzas = (state=initialState, action) =>{
     }
      return state;
 };
-
-
-
-//action-creators
-export const setPizzasAC = (items) => ({
-    type: SET_PIZZAS,
-    payload: items
-});
 
 export default pizzas

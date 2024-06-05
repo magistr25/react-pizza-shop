@@ -1,13 +1,13 @@
-import {combineReducers, createStore} from 'redux';
-import filters from './reducers/filters';
-import pizzas from "./reducers/pizzas";
+import {createStore, compose, applyMiddleware} from 'redux';
+import {rootReducer} from "./reducers/rootReducer";
 
-const rootReducer = combineReducers({
-    filters: filters,
-    pizzas: pizzas,
-})
+import {thunk} from "redux-thunk";
 
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+
+const composeEnhancers = compose(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() || compose)
+
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 window.store = store; // Для отладки, чтобы иметь доступ к хранилищу в консоли
 export default store;
