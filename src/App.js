@@ -1,9 +1,8 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { Header } from './components';
 import { Home, Cart } from './pages';
 import { Route, Routes } from 'react-router';
-import { fetchPizzas } from './redux/actions/pizzas';
+
 
 function App() {
 

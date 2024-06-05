@@ -1,8 +1,13 @@
 import axios from 'axios';
 
 const SET_PIZZAS = 'SET_PIZZAS';
+const SET_LOADED ='SET_LOADED'
+// Action creators
 
-// Action creator
+export const setLoadedAC = (payload) => ({
+    type: SET_LOADED,
+    payload,
+});
 export const setPizzasAC = (items) => ({
     type: SET_PIZZAS,
     payload: items,
@@ -16,9 +21,10 @@ export const setPizzasAC = (items) => ({
 //     })
 // };
 
-//Сложность кода обусловлена необходимостью продемонстрировать работу с эмуляцией бэкенда
+//fetchPizzas - при необходимости происходит эмуляция бэкенда
 export const fetchPizzas = () => async (dispatch) => {
-    const fetchWithTimeout = (url, timeout = 2000) =>
+    dispatch(setLoadedAC(false));
+    const fetchWithTimeout = (url, timeout = 1500) =>
         Promise.race([
             axios.get(url),
             new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), timeout))
@@ -44,4 +50,6 @@ export const fetchPizzas = () => async (dispatch) => {
             console.error('Error fetching from the second endpoint:', secondError);
         }
     }
+    dispatch(setLoadedAC(true));
+
 };

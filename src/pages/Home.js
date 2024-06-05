@@ -18,24 +18,25 @@ const Home = () => {
     const dispatch = useDispatch();
     const items = useSelector((state) => state.pizzas.items)
     const isLoaded = useSelector((state) => state.pizzas.isLoaded)
-
-    const onSelectCategory = (index) => {
-        dispatch(setCategory(index));
-
-    }
+    const {category, sortBy} = useSelector((state) => state.filters)
 
     React.useEffect(() => {
-        if(!items.length){
-            dispatch(fetchPizzas());
-        }
-    }, []);
+       dispatch(fetchPizzas());
 
+    }, [category]);
+
+
+    const onSelectCategory = React.useCallback((index) => {
+        dispatch(setCategory(index));
+
+    },[]);
 
     return (
         <div className="container">
             <div className="content__top">
                 <Categories
-                    onClickItem={onSelectCategory}
+                    activeCategory={category}
+                    onClickCategory={onSelectCategory}
                     items={catgoryNames}/>
                 <SortPopup items={sortItems}/>
             </div>
@@ -56,7 +57,7 @@ const Home = () => {
                         // {...obj} - то же самое (кроме key)
                         />
                     )
-                    :Array(12).fill(<PizzaLoadingBlock />)
+                    :Array(12).fill(0).map((el, index) => <PizzaLoadingBlock  key={index}/>)
                 }
 
 
