@@ -27,7 +27,9 @@ const Home = () => {
 
 
     React.useEffect(() => {
-        dispatch(fetchPizzas());
+        if(!items.length){
+            dispatch(fetchPizzas());
+        }
     }, []);
 
 
