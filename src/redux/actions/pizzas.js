@@ -18,7 +18,7 @@ export const setPizzasAC = (items) => ({
 
 //Сложность кода обусловлена необходимостью продемонстрировать работу с эмуляцией бэкенда
 export const fetchPizzas = () => async (dispatch) => {
-    const fetchWithTimeout = (url, timeout = 100) =>
+    const fetchWithTimeout = (url, timeout = 2000) =>
         Promise.race([
             axios.get(url),
             new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), timeout))
