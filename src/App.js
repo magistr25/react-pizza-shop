@@ -6,11 +6,6 @@ import { Route, Routes } from 'react-router';
 import { fetchPizzas } from './redux/actions/pizzas';
 
 function App() {
-    const dispatch = useDispatch();
-
-    React.useEffect(() => {
-        dispatch(fetchPizzas());
-    }, []);
 
     return (
         <div className="wrapper">
