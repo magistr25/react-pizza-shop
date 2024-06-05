@@ -1,0 +1,36 @@
+[
+  {
+    "id": 7,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6110059795842D40396BCF1E73.avif",
+    "name": "Барбекю",
+    "types": [
+      0,
+      1
+    ],
+    "sizes": [
+      26,
+      30,
+      40
+    ],
+    "price": 820,
+    "category": "Гриль",
+    "rating": 4
+  },
+  {
+    "id": 9,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
+    "name": "Бургер-пицца",
+    "types": [
+      0,
+      1
+    ],
+    "sizes": [
+      26,
+      30,
+      40
+    ],
+    "price": 803,
+    "category": "Гриль",
+    "rating": 4
+  }
+]

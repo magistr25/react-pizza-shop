@@ -1,0 +1,35 @@
+[
+  {
+    "id": "0",
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
+    "name": "Пепперони фреш с перцем",
+    "types": [
+      0,
+      1
+    ],
+    "sizes": [
+      26,
+      40
+    ],
+    "price": 803,
+    "category": "Острые",
+    "rating": 4
+  },
+  {
+    "id": "10",
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6122BB3424B593BB15EACE3197.avif",
+    "name": "Двойная пепперони",
+    "types": [
+      0,
+      1
+    ],
+    "sizes": [
+      26,
+      30,
+      40
+    ],
+    "price": 820,
+    "category": "Острые",
+    "rating": 4
+  }
+]

@@ -10,12 +10,49 @@ import {setPizzasAC} from './redux/reducers/pizzas';
 function App() {
     const dispatch = useDispatch();
 
-    React.useEffect(()=> {
-        axios.get('http://localhost:3000/db.json')
-            .then(({data}) => {
-               dispatch(setPizzasAC(data.pizzas));
-            });
-    },[]);
+    React.useEffect(() => {
+        const fetchPizzas = async () => {
+            const timeout = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Timeout')), 100)
+            );
+
+            try {
+                const firstRequest = axios.get('http://localhost:3001/pizzas');
+                const { data: firstData } = await Promise.race([firstRequest, timeout]);
+
+                if (firstData && firstData.length > 0) {
+                    dispatch(setPizzasAC(firstData));
+                } else {
+                    console.warn('First endpoint returned no data, trying the second endpoint.');
+                    const { data: secondData } = await axios.get('http://localhost:3000/db.json');
+                    if (secondData && secondData.pizzas && secondData.pizzas.length > 0) {
+                        dispatch(setPizzasAC(secondData.pizzas));
+                    } else {
+                        console.error('Second endpoint also returned no data.');
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching from the first endpoint:', error);
+                try {
+                    const { data: secondData } = await axios.get('http://localhost:3000/db.json');
+                    if (secondData && secondData.pizzas && secondData.pizzas.length > 0) {
+                        dispatch(setPizzasAC(secondData.pizzas));
+                    } else {
+                        console.error('Second endpoint also returned no data or failed.');
+                    }
+                } catch (secondError) {
+                    console.error('Error fetching from the second endpoint:', secondError);
+                }
+            }
+        };
+
+        fetchPizzas();
+    }, [dispatch]);
+
+
+
+
+
     return (
             <div className="wrapper">
                 <Header/>
