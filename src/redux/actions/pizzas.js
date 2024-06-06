@@ -16,7 +16,11 @@ export const setPizzasAC = (items) => ({
 // Thunk action creator
 
 // export const fetchPizzas = (sortBy, category) => (dispatch) => {
-//     axios.get('http://localhost:3001/pizzas').then(({data}) => {
+//     dispatch({
+//         type: SET_LOADED,
+//         payload: false
+//     });
+//     axios.get(`http://localhost:3001/pizzas?category=${category}&_sort=${sortBy.type}&_order=desc`).then(({data}) => {
 //         dispatch(setPizzasAC(data));
 //     })
 // };
@@ -34,8 +38,8 @@ export const fetchPizzas = (sortBy, category) => async (dispatch) => {
 
     try {
         const firstUrl = category !== null
-            ? `http://localhost:3001/pizzas?category=${category}&_sort=${sortBy.type}&_order=asc`
-            : `http://localhost:3001/pizzas?_sort=${sortBy.type}&_order=asc`;
+            ? `http://localhost:3001/pizzas?category=${category}&_sort=${sortBy}&_order=desc`
+            : `http://localhost:3001/pizzas?_sort=${sortBy}&_order=asc`;
 
         const firstResponse = await fetchWithTimeout(firstUrl);
 
@@ -56,25 +60,33 @@ export const fetchPizzas = (sortBy, category) => async (dispatch) => {
             // Build the URL for the second request
             switch (category) {
                 case null:
-                    secondUrl = 'http://localhost:3000/responses/db2.json';
+                    if(sortBy==='name') secondUrl = 'http://localhost:3000/responses/sortAlphabet.json';
+                    if(sortBy==='price') secondUrl = 'http://localhost:3000/responses/sortPrice.json';
+                    if(sortBy==='popular') secondUrl = 'http://localhost:3000/responses/sortPopup.json';
                     break;
                 case 0:
-                    secondUrl = 'http://localhost:3000/responses/meat.json';
+                    if(sortBy==='name') secondUrl = 'http://localhost:3000/responses/sortAlphabet_0.json';
+                    if(sortBy==='price') secondUrl = 'http://localhost:3000/responses/sortPrice_0.json';
+                    if(sortBy==='popular') secondUrl = 'http://localhost:3000/responses/sortPopup_0.json';
                     break;
                 case 1:
-                    secondUrl = 'http://localhost:3000/responses/vegetable.json';
+                    if(sortBy==='name') secondUrl = 'http://localhost:3000/responses/sortAlphabet_1.json';
+                    if(sortBy==='price') secondUrl = 'http://localhost:3000/responses/sortPrice_1.json';
+                    if(sortBy==='popular') secondUrl = 'http://localhost:3000/responses/sortPopup_1.json';
                     break;
                 case 2:
-                    secondUrl = 'http://localhost:3000/responses/gril.json';
+                    if(sortBy==='name') secondUrl = 'http://localhost:3000/responses/sortAlphabet_2.json';
+                    if(sortBy==='price') secondUrl = 'http://localhost:3000/responses/sortPrice_2.json';
+                    if(sortBy==='popular') secondUrl = 'http://localhost:3000/responses/sortPopup_2.json';
                     break;
                 case 3:
-                    secondUrl = 'http://localhost:3000/responses/hot.json';
+                    if(sortBy==='name') secondUrl = 'http://localhost:3000/responses/sortAlphabet_3.json';
+                    if(sortBy==='price') secondUrl = 'http://localhost:3000/responses/sortPrice_3.json';
+                    if(sortBy==='popular') secondUrl = 'http://localhost:3000/responses/sortPopup_3.json';
                     break;
                 case 4:
                     secondUrl = 'http://localhost:3000/responses/closed.json';
                     break;
-                default:
-                    secondUrl = 'http://localhost:3000/responses/db2.json';
             }
 
             secondResponse = await axios.get(secondUrl);

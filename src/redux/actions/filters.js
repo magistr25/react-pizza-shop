@@ -15,14 +15,6 @@ export const setCategory = (catIndex) => ({
     payload: catIndex
 });
 
-// Thunk action creator
 
-export const fetchPizzasByCategory  = () => (dispatch) => {
-    dispatch(setLoadedAC(true))
-    axios.get('http://localhost:3001/pizzas?catrgiry={data}').then(({data}) => {
-        dispatch(setCategory(data));
-    })
-    dispatch(setLoadedAC(false))
-};
 
 

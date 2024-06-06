@@ -11,7 +11,7 @@ const sortItems =
     [
         {name:'популярности', type: 'popular'},
         {name:'цене', type: 'price'},
-        {name:'алфавиту', type: 'alphabet'}
+        {name:'алфавиту', type: 'name'}
     ]
 
 const Home = () => {

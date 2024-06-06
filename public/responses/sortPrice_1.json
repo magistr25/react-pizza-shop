@@ -1,0 +1,71 @@
+{
+  "pizzas":[
+
+    {
+      "id": 8,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6105EF6690B86FBDE6150B5B0C.avif",
+      "name": "Маргарита",
+      "types": [
+        0,
+        1
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 703,
+      "category": "Вегетарианские",
+      "rating": 4
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D610D2925109AB2E1C92CC5383C.avif",
+      "name": "Сырная",
+      "types": [
+        0
+      ],
+      "sizes": [
+        26,
+        30
+      ],
+      "price": 703,
+      "category": "Вегетарианские",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6175C10773BFE36E56D48DF7E3.avif",
+      "name": "Пицца Жюльен",
+      "types": [
+        0,
+        1
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 800,
+      "category": "Вегетарианские",
+      "rating": 4
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D613B84A5DBB4C1C50FB9583B7E.avif",
+      "name": "Песто",
+      "types": [
+        0,
+        1
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 803,
+      "category": "Вегетарианские",
+      "rating": 5
+    }
+  ]
+}
