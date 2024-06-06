@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setCategory, setSortBy} from "../redux/actions/filters";
 import {fetchPizzas} from "../redux/actions/pizzas";
 
-const catgoryNames = [
+const categoryNames = [
     'Мясные', 'Вегетарианские', 'Гриль', 'Острые', 'Закрытые'
 ];
 const sortItems =
@@ -19,11 +19,12 @@ const Home = () => {
     const items = useSelector((state) => state.pizzas.items)
     const isLoaded = useSelector((state) => state.pizzas.isLoaded)
     const {category, sortBy} = useSelector((state) => state.filters)
+    console.log(category)
 
     React.useEffect(() => {
-       dispatch(fetchPizzas());
+       dispatch(fetchPizzas(sortBy, category));
 
-    }, [category]);
+    }, [category, sortBy]);
 
 
     const onSelectCategory = React.useCallback((index) => {
@@ -42,7 +43,7 @@ const Home = () => {
                 <Categories
                     activeCategory={category}
                     onClickCategory={onSelectCategory}
-                    items={catgoryNames}/>
+                    items={categoryNames}/>
                 <SortPopup activeSortType={sortBy}
                            onClickSortType={onSelectSortType}
                            items={sortItems}/>

@@ -1,4 +1,5 @@
-[
+{
+  "pizzas":[
   {
     "id": "0",
     "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
@@ -27,7 +28,8 @@
       26,
       30,
       40
-    ],
+    ]
+  }
     "price": 820,
     "category": "Острые",
     "rating": 4
