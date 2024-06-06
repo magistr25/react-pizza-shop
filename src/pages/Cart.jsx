@@ -4,7 +4,7 @@ import {Button} from "../components";
 
 const Cart = () => {
     return (
-        <div class="content">
+        <div className="content">
             <div className="container container--cart">
                 <div className="cart">
                     <div className="cart__top">
@@ -80,7 +80,20 @@ const Cart = () => {
                         </div>
                     </div>
                     <div className="content__items">
-
+                        {/*{addedPizzas.map((obj) => (*/}
+                        {/*    <CartItem*/}
+                        {/*        key={obj.id}*/}
+                        {/*        id={obj.id}*/}
+                        {/*        name={obj.name}*/}
+                        {/*        type={obj.type}*/}
+                        {/*        size={obj.size}*/}
+                        {/*        totalPrice={items[obj.id].totalPrice}*/}
+                        {/*        totalCount={items[obj.id].items.length}*/}
+                        {/*        onRemove={onRemoveItem}*/}
+                        {/*        onMinus={onMinusItem}*/}
+                        {/*        onPlus={onPlusItem}*/}
+                        {/*    />*/}
+                        {/*))}*/}
                     </div>
                     <div className="cart__bottom">
                         <div className="cart__bottom-details">
@@ -117,7 +130,7 @@ const Cart = () => {
                         </div>
                     </div>
                 </div>
-
+                ) : (
                 <div className="cart cart--empty">
                     <h2>
                         Корзина пустая <i>😕</i>

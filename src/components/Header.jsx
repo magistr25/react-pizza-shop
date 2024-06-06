@@ -2,26 +2,35 @@ import React from "react";
 import logoSvg from "../assets/img/pizza-logo.svg"
 import {Button} from "./index";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
+import cart from "../pages/Cart";
 
-const Header = props => {
-    return (<div className="header">
-    <div className="container">
-        <Link to="/">
-            <div className="header__logo">
-                <img width="38" src={logoSvg} alt="Pizza logo"/>
-                <div>
-                    <h1>React Pizza</h1>
-                    <p>самая вкусная пицца во вселенной</p>
+const Header = () => {
+    const {totalPrice, totalCount} = useSelector(({cart}) => ({
+        totalPrice: cart.totalPrice,
+        totalCount: cart.totalCount,
+    }));
+
+
+    return (
+        <div className="header">
+            <div className="container">
+                <Link to="/">
+                    <div className="header__logo">
+                        <img width="38" src={logoSvg} alt="Pizza logo"/>
+                        <div>
+                            <h1>React Pizza</h1>
+                            <p>самая вкусная пицца во вселенной</p>
+                        </div>
+                    </div>
+                </Link>
+
+                <div className="header__cart">
+                    <Link to={"/cart"}>
+                        <Button className="button--cart" totalPrice={totalPrice} totalCount={totalCount}/>
+                    </Link>
                 </div>
             </div>
-        </Link>
-
-        <div className="header__cart">
-            <Link to={"/cart"}>
-                <Button/>
-            </Link>
-        </div>
-    </div>
         </div>
     )
 }
