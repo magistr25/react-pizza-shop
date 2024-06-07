@@ -3,20 +3,31 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {Button} from "../index";
 
-const PizzaBlock = ({imageUrl, name, types, sizes, price, category, rating}) => {
-    const typeNames = ['тонкое', 'традиционное'];
-    const sizeNames = [26, 30, 40];
+const PizzaBlock = ({id, imageUrl, name, types, sizes, price, onClickAddPizza}) => {
+    const availableTypes = ['тонкое', 'традиционное'];
+    const availableSizes = [26, 30, 40];
 
     const [activeType, setActiveType] = useState(types[0]);
-    const [activeSize, setActiveSize] = useState(sizes[0]);
+    const [activeSize, setActiveSize] = useState(0);
 
-    const onSelectType = (index)=>{
+    const onSelectType = (index) => {
         setActiveType(index);
     }
-    const onSelectSize = (index)=>{
+    const onSelectSize = (index) => {
         setActiveSize(index);
     }
 
+    const onAddPizza = () => {
+    const obj = {
+        id,
+        name,
+        imageUrl,
+        type: availableTypes[activeType],
+        size: availableSizes[activeSize],
+        price,
+    }
+    onClickAddPizza(obj)
+}
     // return  (
     //     <ContentLoader
     //         speed={2}
@@ -46,7 +57,7 @@ const PizzaBlock = ({imageUrl, name, types, sizes, price, category, rating}) => 
             <h4 className="pizza-block__title">{name}</h4>
             <div className="pizza-block__selector">
                 <ul>
-                    {typeNames.map((type, index) => (
+                    {availableTypes.map((type, index) => (
                         <li
                             key={type}
                             onClick={() => onSelectType(index)}
@@ -61,7 +72,7 @@ const PizzaBlock = ({imageUrl, name, types, sizes, price, category, rating}) => 
                 </ul>
 
                 <ul>
-                    {sizeNames.map((size, index) => (
+                    {availableSizes.map((size, index) => (
                         <li
                             key={size}
                             onClick={() => onSelectSize(index)}
@@ -78,7 +89,7 @@ const PizzaBlock = ({imageUrl, name, types, sizes, price, category, rating}) => 
             </div>
             <div className="pizza-block__bottom">
                 <div className="pizza-block__price">{price}</div>
-                <Button className="button--add" outline>
+                <Button onClick={onAddPizza} className="button--add" outline>
                     <svg
                         width="12"
                         height="12"
@@ -105,6 +116,7 @@ PizzaBlock.propTypes = {
     types: PropTypes.arrayOf(PropTypes.number).isRequired,
     sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
     price: PropTypes.number.isRequired,
+    onAddPizza: PropTypes.func.isRequired,
 }
 PizzaBlock.defaultProps = {
     name: '---',
