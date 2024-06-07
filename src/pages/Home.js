@@ -18,9 +18,10 @@ const sortItems =
 const Home = () => {
     const dispatch = useDispatch();
     const items = useSelector((state) => state.pizzas.items)
+    const cartItems = useSelector((state) => state.cart.items)
     const isLoaded = useSelector((state) => state.pizzas.isLoaded)
     const {category, sortBy} = useSelector((state) => state.filters)
-    console.log(category)
+    console.log(cartItems)
 
     React.useEffect(() => {
        dispatch(fetchPizzas(sortBy, category));
@@ -42,6 +43,9 @@ const Home = () => {
         dispatch(addPizzaToCart(obj));
     }
 
+    const pizzasArray = ["Мясные", "Вегетерианские", "Гриль", "Острые", "Закрытые"]
+    let pizzasType = pizzasArray[category] ? pizzasArray[category]:"Все"
+
     return (
         <div className="container">
             <div className="content__top">
@@ -53,23 +57,15 @@ const Home = () => {
                            onClickSortType={onSelectSortType}
                            items={sortItems}/>
             </div>
-            <h2 className="content__title">Все пиццы</h2>
+            <h2 className="content__title">{pizzasType} пиццы</h2>
             <div className="content__items">
                 { isLoaded
                     ? items.map((obj) =>
                         <PizzaBlock
                             onClickAddPizza={handleAddPizzaToCart}
-                        key={obj.id}
-                        id={obj.id}
-                        name={obj.name}
-                        imageUrl={obj.imageUrl}
-                        types={obj.types}
-                        sizes={obj.sizes}
-                        price={obj.price}
-                        category={obj.category}
-                        rating={obj.rating}
-
-                        // {...obj} - то же самое (кроме key)
+                            key={obj.id}
+                            addedCount={cartItems[obj.id] && cartItems[obj.id].length}
+                            {...obj}
                         />
                     )
                     :Array(12).fill(0).map((el, index) => <PizzaLoadingBlock  key={index}/>)

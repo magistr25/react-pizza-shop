@@ -2,14 +2,12 @@
   "pizzas": [
     {
       "id": "11",
-      "imageUrl": "",
-      "name": "Закрытые",
-      "types": [
-      ],
-      "sizes": [
-      ],
-      "price": "Нет в наличии",
-      "category": "Закрытые",
+      "imageUrl": "../Super-pizza.png",
+      "name": "Супер-пицца",
+      "types": [0, 1],
+      "sizes": [26, 40],
+      "price": 900,
+      "category": 4,
       "rating": 5
     }
   ]
