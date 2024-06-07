@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import {Button} from "../components";
 
+
 const Cart = () => {
     return (
         <div className="content">
@@ -140,7 +141,7 @@ const Cart = () => {
                         <br/>
                         Для того, чтобы выбрать пиццу, перейдите на главную страницу.
                     </p>
-                    <img alt="Empty cart"/>
+                    <img src="/emptyBox.png" alt="Empty cart"/>
                     <Link to="/" className="button button--black">
                         <span>Вернуться назад</span>
                     </Link>
