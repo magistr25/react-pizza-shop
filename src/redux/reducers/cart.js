@@ -9,6 +9,13 @@ const getTotalPrice = (array) => {
 
 const cart = (state = initialState, action) => {
     switch (action.type) {
+        case 'CLEAR_CART':
+            return {
+                ...state,
+                items: {},
+                totalPrice: 0,
+                totalCount: 0,
+            };
         case 'ADD_PIZZA_TO_CART':
             const currentPizzaItems = !state.items[action.payload.id]
                 ? [action.payload]
