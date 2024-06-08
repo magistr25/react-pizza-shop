@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import {Button} from "../index";
 
 const PizzaBlock = ({id, imageUrl, name, types, sizes, price, onClickAddPizza, addedCount}) => {
+
     const availableTypes = ['тонкое', 'традиционное'];
     const availableSizes = [26, 30, 40];
 
@@ -103,7 +104,7 @@ const PizzaBlock = ({id, imageUrl, name, types, sizes, price, onClickAddPizza, a
                         />
                     </svg>
                     <span>Добавить</span>
-                    {addedCount && <i> {addedCount}</i>}
+                     {addedCount && <i> {addedCount}</i>}
                 </Button>
             </div>
         </div>

@@ -1,10 +1,14 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {Button} from "../components";
-import {CartItem} from "../components/CartItem";
+import {CartItem} from "../components";
+import {useSelector} from "react-redux";
 
 
 const Cart = () => {
+    const{totalPrice, totalCount, items} = useSelector(state => state.cart);
+    const addedPizzas = Object.keys(items).map(key => items[key].items[0]);
+    console.log(addedPizzas)
     return (
         <div className="content">
             <div className="container container--cart">
@@ -82,29 +86,25 @@ const Cart = () => {
                         </div>
                     </div>
                     <div className="content__items">
-                        {/*{addedPizzas.map((obj) => (*/}
-                        {/*    <CartItem*/}
-                        {/*        key={obj.id}*/}
-                        {/*        id={obj.id}*/}
-                        {/*        name={obj.name}*/}
-                        {/*        type={obj.type}*/}
-                        {/*        size={obj.size}*/}
-                        {/*        totalPrice={items[obj.id].totalPrice}*/}
-                        {/*        totalCount={items[obj.id].items.length}*/}
-                        {/*        onRemove={onRemoveItem}*/}
-                        {/*        onMinus={onMinusItem}*/}
-                        {/*        onPlus={onPlusItem}*/}
-                        {/*    />*/}
-                        {/*))}*/}
-                        <CartItem name="Пепперони" type="тонкое" size={26} />
+                        {
+                            addedPizzas.map((obj)=>(
+                                <CartItem type={obj.type}
+                                          name={obj.name}
+                                          type={obj.type}
+                                          size={obj.size}
+                                          totalPrice={items[obj.id].totalPrice}
+                                          totalCount={items[obj.id].items.length}
+                                />)
+                            )}
+
                     </div>
                     <div className="cart__bottom">
                         <div className="cart__bottom-details">
               <span>
-                Всего пицц: <b>{} шт.</b>
+                Всего пицц: <b>{totalCount} шт.</b>
               </span>
                             <span>
-                Сумма заказа: <b>{} ₽</b>
+                Сумма заказа: <b>{totalPrice} ₽</b>
               </span>
                         </div>
                         <div className="cart__bottom-buttons">
