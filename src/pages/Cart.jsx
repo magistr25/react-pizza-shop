@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {Button} from "../components";
+import {CartItem} from "../components/CartItem";
 
 
 const Cart = () => {
@@ -95,6 +96,7 @@ const Cart = () => {
                         {/*        onPlus={onPlusItem}*/}
                         {/*    />*/}
                         {/*))}*/}
+                        <CartItem name="Пепперони" type="тонкое" size={26} />
                     </div>
                     <div className="cart__bottom">
                         <div className="cart__bottom-details">
