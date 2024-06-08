@@ -38,8 +38,8 @@ export const fetchPizzas = (sortBy, category) => async (dispatch) => {
 
     try {
         const firstUrl = category !== null
-            ? `http://localhost:3001/pizzas?category=${category}&_sort=${sortBy}&_order=desc`
-            : `http://localhost:3001/pizzas?_sort=${sortBy}&_order=asc`;
+            ? `/pizzas?category=${category}&_sort=${sortBy}&_order=desc`
+            : `/pizzas?_sort=${sortBy}&_order=asc`;
 
         const firstResponse = await fetchWithTimeout(firstUrl);
 
