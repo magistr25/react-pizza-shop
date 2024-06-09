@@ -1,9 +1,18 @@
 import React from 'react';
 import {Button} from "./index";
 
-const CartItem = ({id, name,size,type, totalPrice, totalCount, onClickRemoveItem}) => {
+
+
+const CartItem = ({id, name,size,type, totalPrice, totalCount, onClickRemoveItem, plusCartItem, minusCartItem}) => {
     const removePizzaItem = () => {
         onClickRemoveItem(id)
+    }
+    const plusCartPizza = () => {
+        plusCartItem(id)
+    }
+
+    const minusCartPizza = () => {
+        minusCartItem(id)
     }
     return(
         <div className="cart__item">
@@ -19,13 +28,13 @@ const CartItem = ({id, name,size,type, totalPrice, totalCount, onClickRemoveItem
                 <p>{type} тесто, {size} см.</p>
             </div>
             <div className="cart__item-count">
-                <div className="button button--outline button--circle cart__item-count-minus">
+                <Button onClick={minusCartPizza}className="button button--outline button--circle cart__item-count-minus">
                     −
-                </div>
+                </Button>
                 <b>{totalCount}</b>
-                <div className="button button--outline button--circle cart__item-count-plus">
+                <Button onClick={plusCartPizza} className="button button--outline button--circle cart__item-count-plus">
                     +
-                </div>
+                </Button>
             </div>
             <div className="cart__item-price">
                 <b>{totalPrice} ₽</b>

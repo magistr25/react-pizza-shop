@@ -59,6 +59,62 @@ const cart = (state = initialState, action) => {
                     totalPrice: totalPrice,
                 };
 
+            case 'PLUS_CART_ITEM':
+                const plusCartItem = [...state.items[action.payload].items, state.items[action.payload].items[0]];
+
+                const plusUpdatedItems = {
+                    ...state.items,
+                    [action.payload]: {
+                        items: plusCartItem,
+                        totalPrice: getTotalPrice(plusCartItem),
+                    },
+                };
+
+                const allPlusPizzas = [].concat.apply([], Object.values(plusUpdatedItems).map(obj => obj.items));
+                const plusTotalPrice = getTotalPrice(allPlusPizzas);
+                const plusTotalCount = allPlusPizzas.length;
+
+                return {
+                    ...state,
+                    items: plusUpdatedItems,
+                    totalCount: plusTotalCount,
+                    totalPrice: plusTotalPrice,
+                };
+
+            case 'MINUS_CART_ITEM':
+                const currentItems = state.items[action.payload].items;
+                const minusCartItem = currentItems.length > 1
+                    ? state.items[action.payload].items.slice(1)
+                    : [];
+
+                const minusUpdatedItems = minusCartItem.length
+                    ? {
+                        ...state.items,
+                        [action.payload]: {
+                            items: minusCartItem,
+                            totalPrice: getTotalPrice(minusCartItem),
+                        },
+                    }
+                    : {
+                        ...state.items,
+                    };
+
+                if (!minusCartItem.length) {
+                    delete minusUpdatedItems[action.payload];
+                }
+
+                const allMinusPizzas = [].concat.apply([], Object.values(minusUpdatedItems).map(obj => obj.items));
+                const minusTotalPrice = getTotalPrice(allMinusPizzas);
+                const minusTotalCount = allMinusPizzas.length;
+
+                return {
+                    ...state,
+                    items: minusUpdatedItems,
+                    totalCount: minusTotalCount,
+                    totalPrice: minusTotalPrice,
+                };
+
+
             default:
                 return state;
         }

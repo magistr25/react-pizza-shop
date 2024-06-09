@@ -1,9 +1,9 @@
 import React from "react";
-import logoSvg from "../assets/img/pizza-logo.svg"
+import logoSvg from "../assets/img/pizzaLogo.png"
 import {Button} from "./index";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
-import cart from "../pages/Cart";
+
 
 const Header = () => {
     const {totalPrice, totalCount} = useSelector(({cart}) => ({
@@ -17,10 +17,10 @@ const Header = () => {
             <div className="container">
                 <Link to="/">
                     <div className="header__logo">
-                        <img width="38" src={logoSvg} alt="Pizza logo"/>
+                        <img width="60" src={logoSvg} alt="Pizza logo"/>
                         <div>
                             <h1>MY PIZZA</h1>
-                            <p>самая вкусная пицца во вселенной</p>
+                            <p>самая вкусная пицца - каждый день</p>
                         </div>
                     </div>
                 </Link>
