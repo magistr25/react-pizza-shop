@@ -1,7 +1,10 @@
 import React from 'react';
+import {Button} from "./index";
 
-const CartItem = ({name,size,type, totalPrice, totalCount}) => {
-
+const CartItem = ({id, name,size,type, totalPrice, totalCount, onClickRemoveItem}) => {
+    const removePizzaItem = () => {
+        onClickRemoveItem(id)
+    }
     return(
         <div className="cart__item">
             <div className="cart__item-img">
@@ -17,20 +20,20 @@ const CartItem = ({name,size,type, totalPrice, totalCount}) => {
             </div>
             <div className="cart__item-count">
                 <div className="button button--outline button--circle cart__item-count-minus">
-                    {/*<% include ../../../public/img/plus.svg %>*/}
+                    −
                 </div>
                 <b>{totalCount}</b>
                 <div className="button button--outline button--circle cart__item-count-plus">
-                    {/*<% include ../../../public/img/plus.svg %>*/}
+                    +
                 </div>
             </div>
             <div className="cart__item-price">
                 <b>{totalPrice} ₽</b>
             </div>
             <div className="cart__item-remove">
-                <div className="button button--outline button--circle">
-                    {/*<% include ../../../public/img/plus.svg %>*/}
-                </div>
+                <Button  onClick={removePizzaItem} className="button button--outline button--circle">
+                    ✖
+                </Button>
             </div>
         </div>
     )
