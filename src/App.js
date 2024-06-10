@@ -13,7 +13,7 @@ function App() {
             <Header />
             <div className="content">
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/react-pizza-shop/" element={<Home />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/payment" element={<PaymentPage />} />
                 </Routes>

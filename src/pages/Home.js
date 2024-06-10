@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {Categories, SortPopup, PizzaBlock, PizzaLoadingBlock } from "../components";
 import {useDispatch, useSelector} from "react-redux";
 import {setCategory, setSortBy} from "../redux/actions/filters";
@@ -29,12 +29,12 @@ const Home = () => {
     }, [category, sortBy]);
 
 
-    const onSelectCategory = React.useCallback((index) => {
+    const onSelectCategory = useCallback((index) => {
         dispatch(setCategory(index));
 
     },[]);
 
-    const onSelectSortType = React.useCallback((type) => {
+    const onSelectSortType = useCallback((type) => {
         dispatch(setSortBy(type));
 
     },[]);
