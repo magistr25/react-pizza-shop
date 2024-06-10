@@ -1,0 +1,104 @@
+{
+  "pizzas": [
+    {
+      "id": 0,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
+      "name": "Пепперони фреш с перцем" ,
+      "types": [0, 1],
+      "sizes": [26, 40],
+      "price": 803,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D610D2925109AB2E1C92CC5383C.avif",
+      "name": "Сырная" ,
+      "types": [0],
+      "sizes": [26, 30],
+      "price": 703,
+      "category": 0,
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D60FDA22358AC33C6A44EB093A2.avif",
+      "name": "Ветчина и сыр" ,
+      "types": [1],
+      "sizes": [30, 40],
+      "price": 720,
+      "category": 0,
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6175C10773BFE36E56D48DF7E3.avif",
+      "name": "Пицца Жюльен" ,
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 800,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D613B84A5DBB4C1C50FB9583B7E.avif",
+      "name": "Песто" ,
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 803,
+      "category": 0,
+      "rating": 5
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D611F924987957B7F53424B682F.avif",
+      "name": "Ветчина и грибы" ,
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 803,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6110059795842D40396BCF1E73.avif",
+      "name": "Барбекю" ,
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 820,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6105EF6690B86FBDE6150B5B0C.avif",
+      "name": "Маргарита" ,
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 703,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
+      "name": "Бургер-пицца" ,
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 803,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 10,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6122BB3424B593BB15EACE3197.avif",
+      "name": "Двойная пепперони",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 820,
+      "category": 0,
+      "rating": 4
+    }
+  ]
+}
