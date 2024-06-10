@@ -113,7 +113,7 @@ const Cart = () => {
                             <div className="content__items">
                                 {
                                     addedPizzas.map((obj) => (
-                                        <CartItem
+                                        <CartItem key={obj.id}
                                                   id = {obj.id}
                                                   type={obj.type}
                                                   name={obj.name}
@@ -138,7 +138,7 @@ const Cart = () => {
                                     </span>
                                 </div>
                                 <div className="cart__bottom-buttons">
-                                    <a href="/" className="button button--outline button--add go-back-btn">
+                                    <Button className="button button--outline button--add go-back-btn">
                                         <svg
                                             width="8"
                                             height="14"
@@ -156,10 +156,11 @@ const Cart = () => {
                                         <Link to="/">
                                             <span>Вернуться назад</span>
                                         </Link>
-                                    </a>
-                                    <Button className="pay-btn">
-                                        <span>Оплатить сейчас</span>
                                     </Button>
+                                    <Button className="pay-btn">
+                                        <Link to="/payment"><span>Оплатить сейчас</span></Link>
+                                    </Button>
+
                                 </div>
                             </div>
                         </div>)

@@ -2,6 +2,8 @@ import React from 'react';
 import { Header } from './components';
 import { Home, Cart } from './pages';
 import { Route, Routes } from 'react-router';
+import PaymentPage from "./pages/PaymentPage";
+import './scss/components/_paymentPages.scss';
 
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/cart" element={<Cart />} />
+                    <Route path="/payment" element={<PaymentPage />} />
                 </Routes>
             </div>
         </div>
