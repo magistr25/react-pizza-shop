@@ -28,7 +28,7 @@ const CartItem = ({id, name,size,type, totalPrice, totalCount, onClickRemoveItem
                 <p>{type} тесто, {size} см.</p>
             </div>
             <div className="cart__item-count">
-                <Button onClick={minusCartPizza}className="button button--outline button--circle cart__item-count-minus">
+                <Button onClick={minusCartPizza} className="button button--outline button--circle cart__item-count-minus">
                     −
                 </Button>
                 <b>{totalCount}</b>

@@ -80,7 +80,7 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
-    @include noselect();
+    @include noSelect();
 
     span {
       display: inline-block;
