@@ -31,7 +31,10 @@ const Cart = () => {
 
     const {totalPrice, totalCount, items} = useSelector(state => state.cart);
     const addedPizzas = Object.keys(items).map(key => items[key].items[0]);
+    const onClickOrder = () => {
+        console.log("ВАШ ЗАКАЗ", items)
 
+    }
     return (
         <div className="content">
             <div className="container container--cart">
@@ -158,7 +161,7 @@ const Cart = () => {
                                         </Link>
                                     </Button>
                                     <Button className="pay-btn">
-                                        <Link to="/payment"><span>Оплатить сейчас</span></Link>
+                                        <Link onClick={onClickOrder} to="/payment"><span>Оплатить сейчас</span></Link>
                                     </Button>
 
                                 </div>
@@ -174,10 +177,17 @@ const Cart = () => {
                                     <br/>
                                     Для того, чтобы выбрать пиццу, перейдите на главную страницу.
                                 </p>
-                                <img src={cartEmptyImage} alt="Empty cart"/>
-                                <Link to="/" className="button button--black">
-                                    <span>Вернуться назад</span>
-                                </Link>
+
+                                    <img src={cartEmptyImage} alt="Empty cart"/>
+
+                                    <Link to="/" className="button button--black">
+
+                                            <span>Выбрать пиццу</span>
+
+                                    </Link>
+
+
+
                             </div>)
                 }
 
