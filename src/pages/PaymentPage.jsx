@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {Button} from "../components";
 
-const PaymentPage = ({items}) => {
+const PaymentPage = () => {
     const [cardNumber, setCardNumber] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
     const [cvc, setCvc] = useState('');
