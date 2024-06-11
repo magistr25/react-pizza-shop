@@ -79,7 +79,7 @@ const PaymentPage = () => {
                     {success && <div className="success">Оплата прошла успешно!</div>}
                 </form>
 
-                <Link to="/" className="button button--black">
+                <Link to="/react-pizza-shop" className="button button--black">
 
                     <span>Вернуться на главную</span>
 

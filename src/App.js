@@ -13,9 +13,10 @@ function App() {
             <Header />
             <div className="content">
                 <Routes>
+
                     <Route path="/react-pizza-shop/" element={<Home />} />
-                    <Route path="/cart" element={<Cart />} />
-                    <Route path="/payment" element={<PaymentPage />} />
+                    <Route path="/react-pizza-shop/cart" element={<Cart />} />
+                    <Route path="/react-pizza-shop/payment" element={<PaymentPage />} />
                 </Routes>
             </div>
         </div>

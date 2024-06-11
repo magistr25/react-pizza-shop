@@ -52,5 +52,6 @@
   },
   "devDependencies": {
     "json-server": "^1.0.0-beta.1"
-  }
+  },
+  "proxy": "http://localhost:3000/react-pizza-shop"
 }

@@ -155,12 +155,12 @@ const Cart = () => {
                                                 strokeLinejoin="round"
                                             />
                                         </svg>
-                                        <Link to="/">
+                                        <Link to="/react-pizza-shop/">
                                             <span>Вернуться назад</span>
                                         </Link>
                                     </Button>
                                     <Button className="pay-btn">
-                                        <Link onClick={onClickOrder} to="/payment"><span>Оплатить сейчас</span></Link>
+                                        <Link onClick={onClickOrder} to="/react-pizza-shop/payment"><span>Оплатить сейчас</span></Link>
                                     </Button>
 
                                 </div>
@@ -179,7 +179,7 @@ const Cart = () => {
 
                                     <img src={cartEmptyImage} alt="Empty cart"/>
 
-                                    <Link to="/" className="button button--black">
+                                    <Link to="/react-pizza-shop" className="button button--black">
 
                                             <span>Выбрать пиццу</span>
 

@@ -1,5 +1,5 @@
 {
-  "pizzas": [
+  "pizzas":[
     {
       "id": 0,
       "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
@@ -102,7 +102,7 @@
     },
     {
       "id": "11",
-      "imageUrl": "../Super-pizza.png",
+      "imageUrl": "Super-pizza.png",
       "name": "Супер-пицца",
       "types": [0, 1],
       "sizes": [26, 40],

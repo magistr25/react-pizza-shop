@@ -2,7 +2,7 @@
   "pizzas": [
     {
       "id": "11",
-      "imageUrl": "../Super-pizza.png",
+      "imageUrl": "Super-pizza.png",
       "name": "Супер-пицца",
       "types": [0, 1],
       "sizes": [26, 40],
