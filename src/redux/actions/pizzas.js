@@ -60,35 +60,34 @@ export const fetchPizzas = (sortBy, category) => async (dispatch) => {
             // Build the URL for the second request
             switch (category) {
                 case null:
-                    if(sortBy==='name') secondUrl = 'http://localhost:3000/responses/sortAlphabet.json';
-                    if(sortBy==='price') secondUrl = 'http://localhost:3000/responses/sortPrice.json';
-                    if(sortBy==='popular') secondUrl = 'http://localhost:3000/responses/sortPopup.json';
+                    if(sortBy==='name') secondUrl = `${process.env.PUBLIC_URL}/responses/sortAlphabet.json`;
+                    if(sortBy==='price') secondUrl = `${process.env.PUBLIC_URL}/responses/sortPrice.json`;
+                    if(sortBy==='popular') secondUrl = `${process.env.PUBLIC_URL}/responses/sortPopup.json`;
                     break;
                 case 0:
-                    if(sortBy==='name') secondUrl = 'http://localhost:3000/responses/sortAlphabet_0.json';
-                    if(sortBy==='price') secondUrl = 'http://localhost:3000/responses/sortPrice_0.json';
-                    if(sortBy==='popular') secondUrl = 'http://localhost:3000/responses/sortPopup_0.json';
+                    if(sortBy==='name') secondUrl = `${process.env.PUBLIC_URL}/responses/sortAlphabet_0.json`;
+                    if(sortBy==='price') secondUrl = `${process.env.PUBLIC_URL}/responses/sortPrice_0.json`;
+                    if(sortBy==='popular') secondUrl = `${process.env.PUBLIC_URL}/responses/sortPopup_0.json`;
                     break;
                 case 1:
-                    if(sortBy==='name') secondUrl = 'http://localhost:3000/responses/sortAlphabet_1.json';
-                    if(sortBy==='price') secondUrl = 'http://localhost:3000/responses/sortPrice_1.json';
-                    if(sortBy==='popular') secondUrl = 'http://localhost:3000/responses/sortPopup_1.json';
+                    if(sortBy==='name') secondUrl = `${process.env.PUBLIC_URL}/responses/sortAlphabet_1.json`;
+                    if(sortBy==='price') secondUrl = `${process.env.PUBLIC_URL}/responses/sortPrice_1.json`;
+                    if(sortBy==='popular') secondUrl = `${process.env.PUBLIC_URL}/responses/sortPopup_1.json`;
                     break;
                 case 2:
-                    if(sortBy==='name') secondUrl = 'http://localhost:3000/responses/sortAlphabet_2.json';
-                    if(sortBy==='price') secondUrl = 'http://localhost:3000/responses/sortPrice_2.json';
-                    if(sortBy==='popular') secondUrl = 'http://localhost:3000/responses/sortPopup_2.json';
+                    if(sortBy==='name') secondUrl = `${process.env.PUBLIC_URL}/responses/sortAlphabet_2.json`;
+                    if(sortBy==='price') secondUrl = `${process.env.PUBLIC_URL}/responses/sortPrice_2.json`;
+                    if(sortBy==='popular') secondUrl = `${process.env.PUBLIC_URL}/responses/sortPopup_2.json`;
                     break;
                 case 3:
-                    if(sortBy==='name') secondUrl = 'http://localhost:3000/responses/sortAlphabet_3.json';
-                    if(sortBy==='price') secondUrl = 'http://localhost:3000/responses/sortPrice_3.json';
-                    if(sortBy==='popular') secondUrl = 'http://localhost:3000/responses/sortPopup_3.json';
+                    if(sortBy==='name') secondUrl = `${process.env.PUBLIC_URL}/responses/sortAlphabet_3.json`;
+                    if(sortBy==='price') secondUrl = `${process.env.PUBLIC_URL}/responses/sortPrice_3.json`;
+                    if(sortBy==='popular') secondUrl = `${process.env.PUBLIC_URL}/responses/sortPopup_3.json`;
                     break;
                 case 4:
-                    secondUrl = 'http://localhost:3000/responses/closed.json';
+                    secondUrl = `${process.env.PUBLIC_URL}/responses/closed.json`;
                     break;
             }
-
             secondResponse = await axios.get(secondUrl);
 
             console.log('Second endpoint response:', secondResponse);
