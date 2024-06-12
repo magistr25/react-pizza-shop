@@ -203,6 +203,7 @@ body {
       align-items: center;
       justify-content: space-between;
       width: 13%;
+      margin-top: 10px;
 
       &-minus {
         svg {
@@ -228,6 +229,7 @@ body {
         font-weight: bold;
         font-size: 22px;
         letter-spacing: 0.01em;
+        margin: 0 10px;
       }
     }
 
@@ -239,6 +241,7 @@ body {
 
       .button {
         border-color: darken($color: $gray-line, $amount: 10);
+        margin: 0 5px;
       }
 
       svg {
@@ -449,4 +452,14 @@ body {
       }
     }
   }
+}
+
+
+
+.cart__item-count button {
+  margin: 0 5px; /* Устанавливаем отступы между кнопками */
+}
+
+.cart__item-count b {
+  margin: 0 5px; /* Устанавливаем отступы по бокам от totalCount */
 }
