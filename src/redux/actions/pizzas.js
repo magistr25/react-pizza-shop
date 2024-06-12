@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 const SET_PIZZAS = 'SET_PIZZAS';
 const SET_LOADED ='SET_LOADED'
 // Action creators
@@ -85,6 +86,7 @@ export const fetchPizzas = (sortBy, category) => async (dispatch) => {
                     if(sortBy==='popular') secondUrl = `${process.env.PUBLIC_URL}/responses/sortPopup_3.json`;
                     break;
                 case 4:
+
                     secondUrl = `${process.env.PUBLIC_URL}/responses/closed.json`;
                     break;
             }

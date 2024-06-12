@@ -31,7 +31,7 @@ const CartItem = ({id, name,size,type, totalPrice, totalCount, onClickRemoveItem
                 <Button onClick={minusCartPizza} className="button button--outline button--circle cart__item-count-minus">
                     −
                 </Button>
-                <b>{totalCount}</b>
+                <b> {totalCount}</b>
                 <Button onClick={plusCartPizza} className="button button--outline button--circle cart__item-count-plus">
                     +
                 </Button>

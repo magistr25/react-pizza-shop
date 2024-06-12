@@ -167,7 +167,7 @@ const Cart = () => {
                             </div>
                         </div>)
                         : (
-                            <div className="cart cart--empty">
+                            <div className="cart--empty">
                                 <h2>
                                     Корзина пустая <i>😕</i>
                                 </h2>
